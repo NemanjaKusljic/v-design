@@ -1,0 +1,319 @@
+@import "variables";
+
+*{
+	margin:0px;
+	padding:0px;
+	box-sizing: border-box;
+}
+html,
+body{
+	font-family: 'Arial', sans-serif;
+	font-size: 1rem;
+	text-rendering: optimizeLegibility;
+}
+
+
+.header {
+	position: relative;
+	width:100%;
+	
+}
+
+.nav{
+	display: block;
+	position: relative;
+	width:100%;
+
+
+	.nav__main {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		width: 100%;
+	
+		background-color:$color-primary;
+		list-style: none;
+		position: fixed;
+		z-index: 10;
+
+		@media(max-width: 425px){
+			flex-direction: column;
+			text-align: right;
+			//implement styling for mobile view
+		}
+
+		li {
+			display:inline-block;	
+
+			&:hover,
+			&:active {
+				background-color: $color-primary-hover;
+			}
+
+			@media(max-width: 425px){
+				flex:1 1 0;
+				width:100%;
+				display:none;
+			}
+		}
+
+	}
+}
+
+.logo{
+	position: fixed;
+	z-index: 11;
+	transform: translate(0%,-10%);
+}
+
+
+.link {
+	display:inline-block;
+	margin-left: 2em;
+	margin-right: 2em;
+	padding-top: 2.1em;
+	padding-bottom: 2.1em;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	@media(max-width: 425px){
+		margin: 0;
+		padding: .7em;
+	}
+}
+
+	
+
+
+/////// HERO ///////
+.hero{
+	position: relative;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(../img/hero-image.jpg);
+	background-size: cover;
+	height: 50rem;
+	transform:skewY(-3deg);
+
+	&__text {
+		transform:skewY(3deg);
+	}
+
+}
+
+
+h1{
+	color: white;
+	font-weight: bold;
+	font-size: 2.9rem;
+	text-align: center;
+}
+.buttons{
+	display: flex;
+	justify-content: center;
+	
+}
+
+.btn {
+	width: 5rem;
+	flex-basis: 15rem;
+
+
+	&:link,
+	&:visited {
+	display: inline-block;
+	padding: .7rem;
+	font-size: 1rem;
+	text-decoration: none;
+	text-align: center;
+	background-color: #ff6633;
+	text-transform: uppercase;
+	width: auto;
+	margin-top:2rem;
+	color:white;
+	}
+
+	&:hover,
+	&:active {
+	outline: 2px solid white;
+	background-image:linear-gradient(to bottom, rgba(230, 92, 0,0.3) 50%,rgba(230,92,0,0.3) 50%);
+	background-color: inherit;
+	}
+}
+
+.btn{
+	margin-right:1rem;
+}
+
+
+
+//// GALLERY /////
+.gallery {
+	padding:3.5rem 0;
+	position: relative;
+	transform: skewY(-3deg);
+	z-index:3;
+
+	&__heading {
+		transform:skewY(3deg);
+		color: #ff6633;
+		text-align:center;
+		padding:2rem;
+	}
+}
+
+
+.row {
+	display: flex;
+	flex-wrap:wrap;
+	justify-content: space-around;
+	transform:skewY(3deg);
+
+	@media(max-width:425px){
+		
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+
+.column {
+	width: 20%;
+	text-align: center;
+	margin:2%;
+
+	p {
+		text-align: justify;
+	}
+
+	img {
+		width:100%;
+		height: 100%;
+	}
+
+	@media(max-width:425px){
+		width: 80%;
+	}
+
+	@media(max-width: 768px){
+		width:40%;
+		overflow: hidden;
+		margin:5%;
+	}
+}
+
+
+
+/// PROFILES ////
+.profiles{
+	position:relative;
+	background-color: #ff6633;
+	padding-top:1rem;
+	padding-bottom: 3rem;
+	margin-top: -2rem;
+	transform:skewY(-3deg);
+
+}
+
+.black__heading {
+	display:block;
+	color:black;
+	text-align:center;
+	padding:2rem;
+	transform:skewY(3deg);
+	position:absolute;
+	top:-9%;
+	left:40%;
+}
+.gallery__profiles{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 2rem;
+	justify-content: space-between;
+	transform:skewY(3deg);
+	
+}
+.profile__pic{
+	border: none;
+}
+
+
+.profile__card {
+	width:50%;
+	margin:15px 0;
+	color: white;
+
+	img{
+		float: left;
+		shape-outside: circle(50%);
+		margin-right: 20px;
+		margin-left: 20px;
+	}
+
+	p {
+		font-size:.9rem;
+		padding-top:.9rem;
+	}
+	h4{
+		font-size: 1rem;
+		line-height: 100%;
+	}
+}
+
+
+@media (max-width: 425px) {
+	.gallery__profiles{
+		flex-direction: column;
+		align-items: center;
+	}
+	.profile__card{
+		width:90%;
+		margin:15px auto;
+	}
+}
+
+
+///// MAPA ///////
+.map{
+	position:relative;
+	height: 40rem;
+	background-image: url(google-map.png);
+	background-size: cover;
+	position: relative;
+}
+
+
+
+
+
+//// FOOTER ///////
+.footer{
+	background-color: silver;
+	position: relative;
+	width:100%;
+	display: flex;
+	flex-direction: row-reverse;
+
+}
+
+
+
+.address{
+	color: gray;
+	text-align: right;
+	padding: 30px 10px;
+}
+
+@media(max-width: 425px){
+	.footer:before{
+		height:22px;
+	}
+	
+}
+
+
+
+
+
